@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+/* google font import for titles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
+/* applied to entire document / defaults, this can overriden by other styles */
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: ivory;
+    margin: 0; /* allows divs to reach edges of viewport */
+    box-sizing: border-box; /* allows dimensions of elements to be overridden instead of aggregated */
+}
+
+.scroll-button {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    width: 3em;
+    opacity: 0.3;
+    margin: 0.5em 0.5em 0.5em auto;
+
+    &:hover {
+        opacity: .6;
+    }
+}
+
+#scroll-up {
+    bottom: 0;
+}
+
+#scroll-down {
+    top: 0;
+}
+
+.title {
+    font-weight: 600; /* imported font weight (boldness) */
+    font-family: "Poppins", sans-serif;
+    color: black; /* font colour */
+}
+
+.text {
+    color: #5b1f79;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    line-height: 1.75em; /* space between lines of text */
+}
+
+.banner {
+    height: 20em;
+    background-image: url("https://placedog.net/1000/400");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; // parallax effect: scrolling document over fixed background image
+    background-position: center;
+}
+
+/* HEADER/NAVIGATION COMPONENTS */
+.navbox {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 1em 3em;
+    background-color: rgba(132, 132, 132, 0.2); /* colour code with A as opacity */
+}
+
+#caret-down {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    padding-left: 0.3em;
+}
+
+/* Dropdown Button */
+.dropdown-button {
+    font-size: 1em;
+    margin-top: .2em;
+    border: none;
+    background-color: rgba(132, 132, 132, 0);
+    color: #5b1f79;
+    font-weight: 700;
+
+    &:hover #caret-down {
+        padding-left: 0.3em;
+        transform: rotate(-180deg);
+    }
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none; /* hides content when not hovering */
+    position: absolute; /* stops header from expanding when dropdown occurs */
+    background-color: #f1f1f1; /* transparent without this */
+    width: 15rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown-container:hover .dropdown-button {
+    background-color: darkgray;
+}
+
+#logo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.nav-links {
+    text-align: left;
+    color: #5b1f79;
+    font-weight: 700;
+    display: flex;
+    margin-left: auto; /* puts all links to the right side of the navbox */
+}
+
+.link {
+    flex-flow: column wrap;
+    text-decoration: none;
+    padding: 0.7em;
+}
+
+.link:hover {
+    background-color: darkgray;
+}
+
+#contact-link {
+    border: 1.5px solid #5b1f79;
+    border-radius: 8%;
+    color: #5b1f79;
+}
+
+/****************** HOME PAGE **********************/
+.home-container {
+    padding: 1.5em;
+}
+
+.feature {
+    display: flex;
+    background-color: hsla(0, 0%, 89%, 0.91);
+    margin: 3em 2em;
+}
+
+.feature-photo {
+    padding: 1em;
+    height: 20rem;
+    width: 20rem;
+}
+
+.feature-right {
+    text-align: right;
+}
+
+.feature-right .feature-text {
+    margin-left: auto;
+}
+
+.feature-text {
+    padding: 1em;
+    max-width: 50rem;
+}
+
+.button {
+    background-color: white;
+    border-radius: 7%;
+    font-weight: 600;
+    height: 3em;
+    width: 12em;
+    letter-spacing: 0.2em;
+
+    &:hover {
+        background-color: darkgrey;
+        color: white;
+    }
+}
+
+/* FOOTER COMPONENTS */
+footer {
+    padding: 1em;
+    color: #5b1f79;
+    background-color: rgba(132, 132, 132, 0.2);
+
+    p {
+        letter-spacing: 0.03em;
+        font-weight: 400;
+        text-align: center;
+        font-size: 0.7em;
+    }
+}
+
+.socials {
+    padding-top: 0.3em;
+    text-align: center;
+
+    img {
+        padding: 0.4em; /* space between icons */
+        height: 2.5em;
+        width: 2.5em;
+        border-radius: 35%; /* rounded edges on icons */
+
+        &:hover {
+            background-color: darkgray;
+        }
+    }
+}

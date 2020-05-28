@@ -1,0 +1,83 @@
+/* HEADER/NAVIGATION COMPONENTS */
+.navbox {
+    display: flex;
+
+    padding: .5em;
+    background-color: rgba(132, 132, 132, 0.2); /* colour code with A as opacity */
+}
+
+#caret-down {
+    
+    width: 1rem;
+    height: 1rem;
+
+    &:hover {
+        transform: rotate(-180deg);
+    }
+}
+
+/* Dropdown Button */
+.dropdown-button {
+    border: none;
+    background-color: rgba(132, 132, 132, 0);
+    color: #5b1f79;
+    font-weight: 700;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none; /* hides content when not hovering */
+    position: absolute; /* stops header from expanding when dropdown occurs */
+    background-color: #f1f1f1; /* transparent without this */
+    width: 15rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown-container:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown-container:hover .dropdown-button {
+    background-color: darkgray;
+}
+
+#logo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: black;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.nav-links {
+    text-align: left;
+    color: #5b1f79;
+    font-weight: 700;
+    display: flex;
+    margin-left: auto; /* puts all links to the right side of the navbox */
+}
+
+.link {
+    flex-flow: column wrap;
+    text-decoration: none;
+    padding: .7em;
+}
+
+.link:hover {
+    background-color: darkgray;
+    border-radius: 10%;
+}
+
+#contact-link {
+    border: 1.5px solid #5b1f79;
+    border-radius: 8%;
+    color: #5b1f79;
+}

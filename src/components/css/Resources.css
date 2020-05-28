@@ -1,0 +1,50 @@
+/************** RESOURCES COMPONENT ********************/
+.title {
+    font-weight: 600; /* imported font weight (boldness) */
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.1em; /* space between each character */
+    color: black; /* font colour */
+}
+
+.login {
+    display: flex;
+}
+
+#submit-button {
+    flex-flow: column wrap;
+    margin-left: 1rem;
+}
+
+.body {
+    max-width: 75%; /* percentage in relation to parent element */
+    margin: 6% 14%;
+}
+
+.text {
+    margin: 5em; /* offsets the image from being in line with the text */
+}
+
+.quote {
+    text-align: center;
+    color: purple;
+    font-weight: 500;
+    font-size: 0.75em;
+}
+
+.pg-desc {
+    margin-bottom: 4em;
+}
+
+.list {
+    margin-bottom: 3em;
+}
+
+#bio-photo {
+    float: left;
+    margin: 2em;
+    /* browser compatibility */
+    -webkit-box-shadow: 0.5em 0.5em 0.75em -0.1em rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0.5em 0.5em 0.75em -0.1em rgba(0, 0, 0, 0.3);
+    box-shadow: 0.5em 0.5em 0.75em -0.1em rgba(0, 0, 0, 0.3);
+}
