@@ -8,7 +8,7 @@ Designed and coded by Melody Mastache. Design inspired by:
 - Footer style and information. Scaling dimensions based on accessibility. Deciding what to convey/what is important for this section.
 - Scroll display. Aiming to add scroll up and scroll down floating buttons that render upon user scroll.
 
-# Things Learned
+## Things Learned
 - CSS 
   - outline property
   - font-variant property
@@ -18,3 +18,8 @@ Designed and coded by Melody Mastache. Design inspired by:
 - Sass/SCSS
   - variables
   - parent selector
+- React.js
+  - 
+  - 
+  - 
+- 
