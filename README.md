@@ -1,5 +1,5 @@
 # Ami Gordon Site
-A business site for a BC entrepreneur specializing in tutoring, communications, and disability advocacy.
+A business site for a BC entrepreneur specializing in tutoring, communications, and disability advocacy. Uses React.js, Sass/SCSS, and HTML.
 Designed and coded by Melody Mastache. Design inspired by: 
 
 ### Currently working on:
@@ -19,7 +19,3 @@ Designed and coded by Melody Mastache. Design inspired by:
   - variables
   - parent selector
 - React.js
-  - 
-  - 
-  - 
-- 
