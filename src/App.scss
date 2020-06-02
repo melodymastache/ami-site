@@ -1,11 +1,24 @@
+////////////////////// App.scss ////////////////////
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
 /* google font import for titles */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
+/******** COLOR VARIABLES *************/
+$light-gray: #f1f1f1;
+$dark-violet: #5b1f79;
+$ivory: ivory;
+
+/********* ANIMATIONS ***************/
+@keyframes rotateCaret {
+    
+}
+
+
 /* applied to entire document / defaults, this can overriden by other styles */
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: ivory;
+    background-color: $ivory;
     margin: 0; /* allows divs to reach edges of viewport */
     box-sizing: border-box; /* allows dimensions of elements to be overridden instead of aggregated */
 }
@@ -15,10 +28,10 @@ body {
     position: sticky;
     width: 3em;
     opacity: 0.3;
-    margin: 0.5em 0.5em 0.5em auto;
+    margin-left: auto;
 
     &:hover {
-        opacity: .6;
+        opacity: 0.6;
     }
 }
 
@@ -37,7 +50,7 @@ body {
 }
 
 .text {
-    color: #5b1f79;
+    color: $dark-violet;
     font-weight: 400;
     letter-spacing: 0.1em;
     line-height: 1.75em; /* space between lines of text */
@@ -45,11 +58,14 @@ body {
 
 .banner {
     height: 20em;
-    background-image: url("https://placedog.net/1000/400");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed; // parallax effect: scrolling document over fixed background image
-    background-position: center;
+    opacity: 0.7;
+    background: {
+        image: url("https://placedog.net/1000/400");
+        repeat: no-repeat;
+        size: cover;
+        attachment: fixed; // parallax effect: scrolling document over fixed background image
+        position: center;
+    }
 }
 
 /* HEADER/NAVIGATION COMPONENTS */
@@ -57,7 +73,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     padding: 1em 3em;
-    background-color: rgba(132, 132, 132, 0.2); /* colour code with A as opacity */
+    color: $dark-violet;
 }
 
 #caret-down {
@@ -70,10 +86,9 @@ body {
 /* Dropdown Button */
 .dropdown-button {
     font-size: 1em;
-    margin-top: .2em;
+    margin-top: 0.2em;
     border: none;
-    background-color: rgba(132, 132, 132, 0);
-    color: #5b1f79;
+    color: $dark-violet;
     font-weight: 700;
 
     &:hover #caret-down {
@@ -89,6 +104,7 @@ body {
     background-color: #f1f1f1; /* transparent without this */
     width: 15rem;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1; // makes sure it renders on top of banner and doesn't take on banner styles
 }
 
 /* Links inside the dropdown */
@@ -108,16 +124,13 @@ body {
 }
 
 #logo {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    color: black;
-    font-size: 2em;
-    text-decoration: none;
+    height: 1rem;
+    width: 14rem;
 }
 
 .nav-links {
     text-align: left;
-    color: #5b1f79;
+    color: $dark-violet;
     font-weight: 700;
     display: flex;
     margin-left: auto; /* puts all links to the right side of the navbox */
@@ -127,16 +140,26 @@ body {
     flex-flow: column wrap;
     text-decoration: none;
     padding: 0.7em;
-}
 
-.link:hover {
-    background-color: darkgray;
+    &:visited {
+        color: gray;
+    }
+
+    &:hover {
+        background-color: pink;
+    }
+
+    &:active {
+        border: inset;
+    }
 }
 
 #contact-link {
-    border: 1.5px solid #5b1f79;
+    border: 1.5px solid $dark-violet;
     border-radius: 8%;
-    color: #5b1f79;
+    padding: 0.7em 1em;
+    background-color: hsla(237, 70%, 52%, 1);
+    color: $dark-violet;
 }
 
 /****************** HOME PAGE **********************/
@@ -186,14 +209,24 @@ body {
 /* FOOTER COMPONENTS */
 footer {
     padding: 1em;
-    color: #5b1f79;
+    color: $dark-violet;
     background-color: rgba(132, 132, 132, 0.2);
+    border: {
+        style: solid;
+        color: red yellow green blue;
+    }
 
     p {
-        letter-spacing: 0.03em;
-        font-weight: 400;
+        letter-spacing: 0.2em;
         text-align: center;
-        font-size: 0.7em;
+        width: 50%;
+        margin: auto; // centers div
+        padding: .8em;
+
+        font: {
+            size: 0.7em;
+            weight: 500;
+        }
     }
 }
 
@@ -202,13 +235,17 @@ footer {
     text-align: center;
 
     img {
-        padding: 0.4em; /* space between icons */
-        height: 2.5em;
-        width: 2.5em;
+        padding: .5em; /* space between icons */
+        height: 3.5em;
+        width: 3.5em;
         border-radius: 35%; /* rounded edges on icons */
 
         &:hover {
             background-color: darkgray;
+        }
+
+        &:active {
+            border: inset;
         }
     }
 }

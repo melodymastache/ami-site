@@ -1,5 +1,6 @@
+/////////////////// Footer.js ////////////////////
+
 import React from 'react';
-import scrollUp from "../images/arrow-circle-up-solid.svg";
 import '../App.scss';
 
 export default class Footer extends React.Component {
@@ -21,9 +22,7 @@ export default class Footer extends React.Component {
                     <p>This website is designed to be disability friendly. If you have any suggestions for
                     improving accessibility, please send us your feedback through one of our email
                     links.</p>
-                    <p>Theme by Melody Mastache | Ami Gordon Communications</p>
                 </div>
-
             </footer>
         )
     }

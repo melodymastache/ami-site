@@ -1,3 +1,5 @@
+/////////////////// App.js ////////////////////////
+
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -9,14 +11,40 @@ import Features from "./components/Features";
 import About from './components/About';
 import Footer from './components/Footer';
 import Resources from './components/Resources';
-import scrollUpImg from "./images/arrow-circle-up-solid.svg";
 import scrollDownImg from "./images/arrow-circle-down-solid.svg";
-var buttons;
+import scrollUpImg from "./images/arrow-circle-up-solid.svg";
+
+function toggleDownArrow() {
+  if (document.documentElement.clientHeight === window.screen.height) {
+    return (
+      <div class="scroll-button">
+        <a href="#footer">
+          <img src={scrollDownImg} alt="scroll-down-button" />
+        </a>
+      </div>
+    )
+  }
+  else {
+    return <span></span>
+  }
+}
+
+function toggleUpArrow() {
+  if (document.documentElement.clientHeight > window.screen.height) {
+    return (
+      <div class="scroll-button" id="scroll-up">
+        <a href="#logo">
+          <img src={scrollUpImg} alt="scroll-up-button" />
+        </a>
+      </div>
+    )
+  }
+  else {
+    return <span></span>
+  }
+}
 
 class Site extends React.Component {
-  constructor() {
-    super();
-  }
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll, true);
   }
@@ -25,20 +53,13 @@ class Site extends React.Component {
   }
   handleScroll() {
     // window.screen.height = viewport
-    if (document.documentElement.clientHeight > window.screen.height) {
-      buttons =
-        <div class="scroll-button" id="scroll-up">
-          <a href="#logo">
-            <img src={scrollUpImg} alt="scroll-up-button" />
-          </a>
-        </div>
-    }
-    console.log(buttons);
   }
   render() {
     return (
       <Router>
         <NavBar />
+
+        {toggleDownArrow()}
 
         <Switch>
           <Route path="/about" component={About} />
@@ -46,11 +67,7 @@ class Site extends React.Component {
           <Route path="/" component={Features} />
         </Switch>
 
-        <div class="scroll-button" onScroll={console.log(this.innerHeight)}>
-          <a href="#footer">
-            <img src={scrollDownImg} alt="scroll-down-button" />
-          </a>
-        </div>
+        {toggleUpArrow()}
 
         <Footer />
       </Router>
